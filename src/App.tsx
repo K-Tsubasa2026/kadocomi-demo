@@ -1,12 +1,11 @@
-import './App.css'
+import Demo from './components/Demo/Demo'
+// ↑ DemoNotice Componentを読み込む
 
 function App() {
 
   return (
     <>
-      <h1>
-        Kadocomi-demo
-      </h1>
+      <Demo />
     </>
   )
 }
