@@ -1,12 +1,14 @@
-import Demo from './components/Demo/Demo'
-// ↑ DemoNotice Componentを読み込む
+import { Routes, Route } from 'react-router'
+import Home from './pages/Home/Home'
+import NotFound from './pages/NotFound/NotFound'
 
 function App() {
-
   return (
-    <>
-      <Demo />
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/404" element={<NotFound />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   )
 }
 
