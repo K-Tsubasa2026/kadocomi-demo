@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './Hero.css'
 import { Link } from 'react-router'
 
@@ -21,10 +22,11 @@ const heroImages=[
 
 
 function Hero(){
+    const [currentSlideIndex, setCurrentSlideIndex] = useState(0)
     return(
         <section className="hero">
             <div className="hero-slider">
-                <div className="hero-track">
+                <div className="hero-track" style={{transform: `translateX(-${currentSlideIndex * 496}px)`}}>
                     {heroImages.map((image,index) =>(
                     <Link to="/404" className="hero-slide" key={image}>
                         <img src={`/images/${image}`} alt={`スライド画像${index + 1}`}/>
@@ -33,7 +35,19 @@ function Hero(){
                 </div>
             </div>
 
-            <div className="hero-dots"></div>
+            <div className="hero-dots">
+                {heroImages.map((image, index) => (
+                    <span
+                        key={image}
+                        className={
+                            index === currentSlideIndex
+                            ? 'hero-dot active'
+                            : 'hero-dot'
+                        }
+                    onClick={() => setCurrentSlideIndex(index)}
+                    />
+                ))}
+            </div>
         </section>
     )
 }
