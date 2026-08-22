@@ -26,7 +26,7 @@ function Hero(){
             <div className="hero-slider">
                 <div className="hero-track">
                     {heroImages.map((image,index) =>(
-                    <Link to="/404" className="hero-slide" key={Image}>
+                    <Link to="/404" className="hero-slide" key={image}>
                         <img src={`/images/${image}`} alt={`スライド画像${index + 1}`}/>
                     </Link>
                     ))}

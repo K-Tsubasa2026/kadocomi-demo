@@ -1,0 +1,45 @@
+.hero {
+    background-color: #ffffff;
+    padding: 24px 0;
+}
+
+.hero-slider {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 ;
+    overflow: hidden;
+}
+
+.hero-track {
+    display: flex;
+    gap: 16px;
+    transition: transform 0.5s ease;
+}
+
+.hero-slide {
+    flex: 0 0 auto;
+    width: 480px;
+}
+
+.hero-slide img{
+    display: block;
+    width: 100%;
+}
+
+.hero-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.hero-dot {
+    width: 5px;
+    height: 5px;
+    background-color: #cccccc;
+    cursor: pointer;
+}
+
+.hero-dot.active {
+    background-color: #252525;
+}
