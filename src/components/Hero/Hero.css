@@ -13,7 +13,6 @@
 .hero-track {
     display: flex;
     gap: 16px;
-    transition: transform 0.5s ease;
 }
 
 .hero-slide {

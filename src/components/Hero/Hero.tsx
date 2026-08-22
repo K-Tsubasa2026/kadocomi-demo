@@ -17,19 +17,21 @@ const heroImages=[
   'c5521f5b-29b5-4efa-9ff3-e92c51d2cf8e.jpg',
 ]
 
-
+// 無限ループ用
+const loopImages = [...heroImages, ...heroImages]
 
 
 
 function Hero(){
-    const [currentSlideIndex, setCurrentSlideIndex] = useState(0)
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0)
+  const [isTransitionEnabled, setIsTransitionEnabled] = useState(true)
 
     useEffect(() => {
         const autoSlideTimer = setInterval(() => {
-        setCurrentSlideIndex((prevIndex) => {
-            return (prevIndex + 1) % heroImages.length
-        })
-
+        // 次のスライドではアニメーションを有効にする
+        setIsTransitionEnabled(true)
+        // スライド番号を1つ進める
+        setCurrentSlideIndex((prevIndex) => prevIndex + 1)
         }, 3000)
 
         return () => {
@@ -41,10 +43,26 @@ function Hero(){
     return(
         <section className="hero">
             <div className="hero-slider">
-                <div className="hero-track" style={{transform: `translateX(-${currentSlideIndex * 496}px)`}}>
-                    {heroImages.map((image,index) =>(
-                    <Link to="/404" className="hero-slide" key={image}>
-                        <img src={`/images/${image}`} alt={`スライド画像${index + 1}`}/>
+                <div 
+                className="hero-track"
+                style={{
+                transform: `translateX(-${currentSlideIndex * 496}px)`,
+                transition: isTransitionEnabled
+                    ? 'transform 0.5s ease'
+                    : 'none',}}
+
+                    onTransitionEnd={() => {
+                    if (currentSlideIndex >= heroImages.length) {
+                    // コピーした1枚目まで到達したら
+                    // アニメーションを切って本物の1枚目に戻す
+                    setIsTransitionEnabled(false)
+                    setCurrentSlideIndex(0)
+                    }
+                }}
+                >
+                    {loopImages.map((image,index) =>(
+                    <Link to="/404" className="hero-slide" key={`${image}-${index}`}>
+                        <img src={`/images/${image}`} alt={`スライド画像${(index % heroImages.length) + 1}`}/>
                     </Link>
                     ))}
                 </div>
@@ -55,13 +73,16 @@ function Hero(){
                     <span
                         key={image}
                         className={
-                            index === currentSlideIndex
+                            index === currentSlideIndex % heroImages.length
                             ? 'hero-dot active'
                             : 'hero-dot'
                         }
-                    onClick={() => setCurrentSlideIndex(index)}
-                    />
-                ))}
+                    onClick={() => {
+                    setIsTransitionEnabled(true)
+                    setCurrentSlideIndex(index)
+                    }}
+            />
+        ))}
             </div>
         </section>
     )
