@@ -20,7 +20,10 @@ const heroImages=[
 // 無限ループ用
 const loopImages = [...heroImages, ...heroImages]
 
-
+// スライド幅・間隔の定数
+const SLIDE_WIDTH = 480
+const SLIDE_GAP = 16
+const SLIDE_MOVE = SLIDE_WIDTH + SLIDE_GAP
 
 function Hero(){
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0)
@@ -47,8 +50,8 @@ function Hero(){
                 <div 
                 className="hero-track"
                 style={{
-                transform: `translateX(-${currentSlideIndex * 496}px)`,
-                transition: isTransitionEnabled
+                    transform: `translateX(-${currentSlideIndex * SLIDE_MOVE}px)`,
+                    transition: isTransitionEnabled
                     ? 'transform 0.5s ease'
                     : 'none',}}
 
