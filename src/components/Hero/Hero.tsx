@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './Hero.css'
 import { Link } from 'react-router'
 
@@ -23,6 +23,21 @@ const heroImages=[
 
 function Hero(){
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0)
+
+    useEffect(() => {
+        const autoSlideTimer = setInterval(() => {
+        setCurrentSlideIndex((prevIndex) => {
+            return (prevIndex + 1) % heroImages.length
+        })
+
+        }, 3000)
+
+        return () => {
+        clearInterval(autoSlideTimer)
+        }
+    }, [])
+
+
     return(
         <section className="hero">
             <div className="hero-slider">
@@ -63,13 +78,16 @@ export default Hero
 // ${image}　変数の中身が入る（例:public/images/019ea67f.jpg）
 
 ///// コードの意味 /////
-// heroImagesの画像を1枚ずつ取り出す
-//         ↓
-// 画像ごとに<Link>を作る
-//         ↓
-// その中に<img>を作る
-//         ↓
-// 画像ファイル名をsrcへ入れる
-//         ↓
-// 11枚全部終わるまで繰り返す
-// ****11回同じHTMLを書く >> 配列 + map()へ変更****
+    // heroImagesの画像を1枚ずつ取り出す
+    //         ↓
+    // 画像ごとに<Link>を作る
+    //         ↓
+    // その中に<img>を作る
+    //         ↓
+    // 画像ファイル名をsrcへ入れる
+    //         ↓
+    // 11枚全部終わるまで繰り返す
+    // ****11回同じHTMLを書く >> 配列 + map()へ変更****
+
+///// js機能 /////
+    // setInterval(() => { この中の処理を一定時間ごとに実行する
