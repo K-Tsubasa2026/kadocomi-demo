@@ -25,6 +25,7 @@ const loopImages = [...heroImages, ...heroImages]
 function Hero(){
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0)
   const [isTransitionEnabled, setIsTransitionEnabled] = useState(true)
+  const [resetKey, setResetKey] = useState(0)
 
     useEffect(() => {
         const autoSlideTimer = setInterval(() => {
@@ -37,7 +38,7 @@ function Hero(){
         return () => {
         clearInterval(autoSlideTimer)
         }
-    }, [])
+    }, [resetKey])
 
 
     return(
@@ -80,6 +81,7 @@ function Hero(){
                     onClick={() => {
                     setIsTransitionEnabled(true)
                     setCurrentSlideIndex(index)
+                    setResetKey((prevKey) => prevKey + 1)
                     }}
             />
         ))}
