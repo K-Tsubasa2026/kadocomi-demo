@@ -44,11 +44,12 @@ function NewArrivals() {
         </div>
 
         <div className="date-tabs">
-            {/* ▼日付を一つずつ取得 */}
+            {/* dates.map((date,index) => 日付を一つずつ取得 */}
+            {/*  key={date} 各日付を識別 */}
             {dates.map((date,index) => ( 
                 <Link 
                     to="/404"
-                    key={date} //各日付を識別
+                    key={date}
                     className={
                         index === 0
                         ? 'date-tab active'
@@ -62,70 +63,44 @@ function NewArrivals() {
         </div>
 
         <div className="arrival-grid">
-            <Link to="/404" className="arrival-card">
-                <div className="arrival-image">Demo image</div>
-                <p className="arrival-title">新着作品タイトル1</p>
-            </Link>
-            <Link to="/404" className="arrival-card">
-                <div className="arrival-image">Demo image</div>
-                <p className="arrival-title">新着作品タイトル2</p>
-            </Link>
-            <Link to="/404" className="arrival-card">
-                <div className="arrival-image">Demo image</div>
-                <p className="arrival-title">新着作品タイトル3</p>
-            </Link>
-            <Link to="/404" className="arrival-card">
-                <div className="arrival-image">Demo image</div>
-                <p className="arrival-title">新着作品タイトル4</p>
-            </Link>
-            <Link to="/404" className="arrival-card">
-                <div className="arrival-image">Demo image</div>
-                <p className="arrival-title">新着作品タイトル5</p>
-            </Link>
-            <Link to="/404" className="arrival-card">
-                <div className="arrival-image">Demo image</div>
-                <p className="arrival-title">新着作品タイトル6</p>
-            </Link>
-            <Link to="/404" className="arrival-card">
-                <div className="arrival-image">Demo image</div>
-                <p className="arrival-title">新着作品タイトル7</p>
-            </Link>
-            <Link to="/404" className="arrival-card">
-                <div className="arrival-image">Demo image</div>
-                <p className="arrival-title">新着作品タイトル8</p>
-            </Link>
-            <Link to="/404" className="arrival-card">
-                <div className="arrival-image">Demo image</div>
-                <p className="arrival-title">新着作品タイトル9</p>
-            </Link>
-            <Link to="/404" className="arrival-card">
-                <div className="arrival-image">Demo image</div>
-                <p className="arrival-title">新着作品タイトル10</p>
-            </Link>
+            {/* arrivals.slice(0, 10) 15件のうち最初の10件だけ取得 */}
+            {/* .map((arrival) => ( 1件ずつ取り出す */}
+            {/* <p className="arrival-title">{arrival}</p> 実際のタイトルを画面に表示*/}
+            {arrivals.slice(0,10).map((arrival) => (
+                <Link 
+                to="/404"
+                key={arrival}
+                className="arrival-card"
+                >
+                    <div className="arrival-image">
+                        Demo image
+                    </div>
+
+                    <p className="arrival-title">
+                    {arrival}
+                    </p>
+                </Link>
+            ))}
         </div>
+
 
         <div className="load-more-wrapper">
             <div className="arrival-grid arrival-grid-fade">
-                <Link to="/404" className="arrival-card">
-                    <div className="arrival-image">Demo image</div>
-                    <p className="arrival-title">新着作品タイトル11</p>
-                </Link>
-                <Link to="/404" className="arrival-card">
-                    <div className="arrival-image">Demo image</div>
-                    <p className="arrival-title">新着作品タイトル12</p>
-                </Link>
-                <Link to="/404" className="arrival-card">
-                    <div className="arrival-image">Demo image</div>
-                    <p className="arrival-title">新着作品タイトル13</p>
-                </Link>
-                <Link to="/404" className="arrival-card">
-                    <div className="arrival-image">Demo image</div>
-                    <p className="arrival-title">新着作品タイトル14</p>
-                </Link>
-                <Link to="/404" className="arrival-card">
-                    <div className="arrival-image">Demo image</div>
-                    <p className="arrival-title">新着作品タイトル15</p>
-                </Link>
+                {arrivals.slice(10).map((arrival) => (
+                    <Link
+                    to="/404"
+                    key={arrival}
+                    className="arrival-card"
+                    >
+                        <div className="arrival-image">
+                            Demo image
+                        </div>
+
+                        <p className="arrival-title">
+                        {arrival}
+                        </p>
+                    </Link>
+                ))}
             </div>
 
             <button type="button" className="load-more-button">

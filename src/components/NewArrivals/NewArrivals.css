@@ -23,3 +23,39 @@
     color: #000000;
     font-weight: bold;
 }
+
+.arrival-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 28px;
+}
+
+.arrival-card {
+    display: block;
+    position: relative;
+}
+
+.arrival-card:not(:nth-child(5n))::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -14px;
+    width: 1px;
+    background-color: #dddddd;
+}
+
+.arrival-image {
+    aspect-ratio: 16 / 9;
+    background-color: #cccccc;
+    color: #666666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.arrival-title {
+    margin-top: 8px;
+    font-size: 13px;
+}
