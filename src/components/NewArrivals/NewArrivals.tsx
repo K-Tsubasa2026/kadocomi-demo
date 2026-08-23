@@ -30,6 +30,12 @@ const arrivals = [
     '新着作品タイトル13',
     '新着作品タイトル14',
     '新着作品タイトル15',
+    '新着作品タイトル16',
+    '新着作品タイトル17',
+    '新着作品タイトル18',
+    '新着作品タイトル19',
+    '新着作品タイトル20',
+
 ]
 
 function NewArrivals() {
@@ -93,18 +99,20 @@ function NewArrivals() {
                     : 'arrival-grid arrival-grid-fade'
                 }
             >
-                {arrivals.slice(10).map((arrival) => (
-                <Link
-                to="/404"
-                key={arrival}
-                className="arrival-card"
-                >
+                {arrivals
+                .slice(10, isExpanded ? 20 : 15)
+                .map((arrival) => (
+                    <Link
+                    to="/404"
+                    key={arrival}
+                    className="arrival-card"
+                    >
                     <div className="arrival-image">
                         Demo image
                     </div>
 
                     <p className="arrival-title">
-                    {arrival}
+                        {arrival}
                     </p>
                 </Link>
             ))}
