@@ -1,3 +1,11 @@
+.new-arrivals {
+    width: calc(100% - 80px);
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/* 日付 */
 .date-tabs {
     position: sticky;
     top: 56px;
@@ -10,16 +18,140 @@
 }
 
 .date-tab {
-    font-size: 11px;
+    font-size: 15px;
     color: #000000;
     padding: 6px 14px;
     border-radius: 999px;
-    font-weight: bold;
-
 }
 
 .date-tab.active {
     background-color: #ffd400;
     color: #000000;
     font-weight: bold;
+}
+
+/* 新着作品アンダーライン */
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+
+    border-bottom: 2px solid #e8e8e8;
+}
+
+.title-underline {
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.title-underline::after {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    bottom: -13px;
+
+    width: 120px;
+    height: 2px;
+
+    background-color: #000000;
+}
+
+/* 新着作品　もっと見る */
+.section-title {
+    margin: 0;
+}
+
+.more-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    color: #000000;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* 新着作品の一覧 */
+.arrival-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 28px;
+}
+
+/* 11〜15件とボタンの配置基準 */
+.load-more-wrapper {
+    position: relative;
+}
+
+/* 11〜15件を薄く表示 */
+.arrival-grid-fade {
+    opacity: 0.35;
+    transition: opacity 0.3s ease;
+}
+
+/* 薄くした作品の上にボタンを重ねる */
+.load-more-button {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 20px;
+
+    background-color: #ffffff;
+    color: #000000;
+
+    border: 2px solid #000000;
+    border-radius: 999px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.arrival-card {
+    display: block;
+    position: relative;
+}
+
+/* 5の倍数番目のカード以外に縦線を付ける */
+.arrival-card:not(:nth-child(5n))::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -14px;
+    width: 1px;
+    background-color: #dddddd;
+}
+
+.arrival-image {
+    aspect-ratio: 16 / 9;
+    background-color: #cccccc;
+    color: #666666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.arrival-title {
+    margin-top: 8px;
+    font-size: 13px;
 }
