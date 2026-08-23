@@ -1,3 +1,10 @@
+.new-arrivals {
+    width: calc(100% - 80px);
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
 .date-tabs {
     position: sticky;
     top: 56px;
@@ -10,12 +17,10 @@
 }
 
 .date-tab {
-    font-size: 11px;
+    font-size: 15px;
     color: #000000;
     padding: 6px 14px;
     border-radius: 999px;
-    font-weight: bold;
-
 }
 
 .date-tab.active {
