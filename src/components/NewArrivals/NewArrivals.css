@@ -30,11 +30,52 @@
     gap: 28px;
 }
 
+/* 11〜15件とボタンの配置基準 */
+.load-more-wrapper {
+    position: relative;
+}
+
+/* 11〜15件を薄く表示 */
+.arrival-grid-fade {
+    opacity: 0.35;
+    transition: opacity 0.3s ease;
+}
+
+/* 薄くした作品の上にボタンを重ねる */
+.load-more-button {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 20px;
+
+    background-color: #ffffff;
+    color: #000000;
+
+    border: 2px solid #000000;
+    border-radius: 999px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
 .arrival-card {
     display: block;
     position: relative;
 }
 
+/* 5の倍数番目のカード以外に縦線を付ける */
 .arrival-card:not(:nth-child(5n))::after {
     content: "";
     position: absolute;

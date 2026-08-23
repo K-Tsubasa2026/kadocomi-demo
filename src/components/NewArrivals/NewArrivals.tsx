@@ -1,5 +1,6 @@
 import './NewArrivals.css'
 import { Link } from 'react-router'
+import { useState } from 'react'
 
 // 日付を配列化
 const dates = [
@@ -32,7 +33,7 @@ const arrivals = [
 ]
 
 function NewArrivals() {
-
+    const [isExpanded, setIsExpanded] = useState(false)
     return(
     <section className="new-arrivals">
         <div className="section-header">
@@ -85,28 +86,40 @@ function NewArrivals() {
 
 
         <div className="load-more-wrapper">
-            <div className="arrival-grid arrival-grid-fade">
+            <div
+                className={
+                    isExpanded
+                    ? 'arrival-grid'
+                    : 'arrival-grid arrival-grid-fade'
+                }
+            >
                 {arrivals.slice(10).map((arrival) => (
-                    <Link
-                    to="/404"
-                    key={arrival}
-                    className="arrival-card"
-                    >
-                        <div className="arrival-image">
-                            Demo image
-                        </div>
+                <Link
+                to="/404"
+                key={arrival}
+                className="arrival-card"
+                >
+                    <div className="arrival-image">
+                        Demo image
+                    </div>
 
-                        <p className="arrival-title">
-                        {arrival}
-                        </p>
-                    </Link>
-                ))}
+                    <p className="arrival-title">
+                    {arrival}
+                    </p>
+                </Link>
+            ))}
             </div>
 
-            <button type="button" className="load-more-button">
-                さらに読み込む
-                <i className="fa-solid fa-circle-plus"></i>
-            </button>
+                {!isExpanded && (
+                <button
+                    type="button"
+                    className="load-more-button"
+                    onClick={() => setIsExpanded(true)}
+                >
+                    さらに読み込む
+                    <i className="fa-solid fa-circle-plus"></i>
+                </button>
+                )}
         </div>
     </section>
 )}
