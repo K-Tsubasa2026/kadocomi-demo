@@ -1,0 +1,25 @@
+.date-tabs {
+    position: sticky;
+    top: 56px;
+    z-index: 90;
+    display: flex;
+    gap: 16px;
+    padding: 12px 0;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+}
+
+.date-tab {
+    font-size: 11px;
+    color: #000000;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-weight: bold;
+
+}
+
+.date-tab.active {
+    background-color: #ffd400;
+    color: #000000;
+    font-weight: bold;
+}
