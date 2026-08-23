@@ -5,6 +5,7 @@
     padding: 40px 0;
 }
 
+/* 日付 */
 .date-tabs {
     position: sticky;
     top: 56px;
@@ -29,6 +30,55 @@
     font-weight: bold;
 }
 
+/* 新着作品アンダーライン */
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+
+    border-bottom: 2px solid #e8e8e8;
+}
+
+.title-underline {
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.title-underline::after {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    bottom: -13px;
+
+    width: 120px;
+    height: 2px;
+
+    background-color: #000000;
+}
+
+/* 新着作品　もっと見る */
+.section-title {
+    margin: 0;
+}
+
+.more-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    color: #000000;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* 新着作品の一覧 */
 .arrival-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
