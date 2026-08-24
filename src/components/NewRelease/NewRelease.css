@@ -1,0 +1,72 @@
+/* ==========================
+   カード（最新刊）
+========================== */
+
+/* セクション全体(レイアウトの横幅を整えるため) */
+.new-release {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* 実際のコンテンツ部分 */
+.new-release-inner {
+    width: calc(100% - 80px);
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.new-release-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+/* 新着作品　もっと見る */
+.new-release-title {
+    margin: 0;
+}
+
+.new-release-more-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    color: #000000;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* 作品の一覧 */
+.new-release-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 14px;
+}
+
+.new-release-card {
+    display: block;
+    text-decoration: none;
+}
+
+.new-release-image {
+    aspect-ratio: 3 / 4; /* 縦横比を3:4に固定 */
+    background-color: #cccccc;
+    color: #666666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    border:3px solid #000 ;
+    border-radius: 4px;
+}
+
+.new-release-card-title {
+    margin-top: 6px;
+    font-size: 16px;
+    color:#000;
+}
