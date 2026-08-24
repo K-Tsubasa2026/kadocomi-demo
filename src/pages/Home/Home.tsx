@@ -4,7 +4,7 @@ import Nav from '../../components/Nav/Nav'
 import Hero from '../../components/Hero/Hero'
 import NewArrivals from '../../components/NewArrivals/NewArrivals'
 import Genre from '../../components/Genre/Genre'
-
+import NewRelease from '../../components/NewRelease/NewRelease'
 
 
 function Home() {
@@ -17,6 +17,7 @@ function Home() {
       <Hero />
       <NewArrivals />
       <Genre />
+      <NewRelease />
     </>
   )
 }
