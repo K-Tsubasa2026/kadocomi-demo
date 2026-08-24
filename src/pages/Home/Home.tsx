@@ -3,7 +3,7 @@ import Header from '../../components/Header/Header'
 import Nav from '../../components/Nav/Nav'
 import Hero from '../../components/Hero/Hero'
 import NewArrivals from '../../components/NewArrivals/NewArrivals'
-
+import Genre from '../../components/Genre/Genre'
 
 
 
@@ -16,6 +16,7 @@ function Home() {
       <Nav />
       <Hero />
       <NewArrivals />
+      <Genre />
     </>
   )
 }
