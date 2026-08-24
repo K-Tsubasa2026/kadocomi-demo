@@ -1,0 +1,63 @@
+.genre {
+    background-color: #b2b1b1;
+    width: 100%;
+    margin: 0 ;
+    padding: 0;
+}
+
+.genre-inner {
+    width: calc(100% - 80px);
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.genre-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+
+/*ジャンルタイトル もっと見る */
+.genre-title {
+    margin: 0;
+}
+
+.genre-more-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    color: #000000;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* 作品の一覧 */
+.genre-grid {
+    width:100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:20px;
+}
+
+.genre-item {
+    display: block;
+    text-align: center;
+    width:100%;
+    box-shadow: 0 4px 0 #313131;
+    box-sizing: border-box;
+    padding: 14px 8px;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    border: 2px solid #000000;
+    text-decoration: none;
+    color:#000000;
+}
