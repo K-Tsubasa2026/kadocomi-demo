@@ -6,6 +6,7 @@ import NewArrivals from '../../components/NewArrivals/NewArrivals'
 import Genre from '../../components/Genre/Genre'
 import NewRelease from '../../components/NewRelease/NewRelease'
 import LabelSearch from '../../components/LabelSearch/LabelSearch'
+import BannerList from '../../components/BannerList/BannerList'
 
 
 function Home() {
@@ -20,6 +21,7 @@ function Home() {
       <Genre />
       <NewRelease />
       <LabelSearch />
+      <BannerList />
     </>
   )
 }
