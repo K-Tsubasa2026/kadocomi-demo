@@ -5,6 +5,7 @@ import Hero from '../../components/Hero/Hero'
 import NewArrivals from '../../components/NewArrivals/NewArrivals'
 import Genre from '../../components/Genre/Genre'
 import NewRelease from '../../components/NewRelease/NewRelease'
+import LabelSearch from '../../components/LabelSearch/LabelSearch'
 
 
 function Home() {
@@ -18,6 +19,7 @@ function Home() {
       <NewArrivals />
       <Genre />
       <NewRelease />
+      <LabelSearch />
     </>
   )
 }
