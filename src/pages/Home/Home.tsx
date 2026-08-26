@@ -8,6 +8,7 @@ import NewRelease from '../../components/NewRelease/NewRelease'
 import LabelSearch from '../../components/LabelSearch/LabelSearch'
 import BannerList from '../../components/BannerList/BannerList'
 import PromoBanner from '../../components/PromoBanner/PromoBanner'
+import Footer from '../../components/Footer/Footer'
 
 function Home() {
 
@@ -23,6 +24,7 @@ function Home() {
       <LabelSearch />
       <BannerList />
       <PromoBanner />
+      <Footer />
     </>
   )
 }
