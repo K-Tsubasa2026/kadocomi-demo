@@ -24,11 +24,13 @@ const loopImages = [...heroImages, ...heroImages]
 const SLIDE_WIDTH = 480
 const SLIDE_GAP = 16
 const SLIDE_MOVE = SLIDE_WIDTH + SLIDE_GAP
+const MOBILE_BREAKPOINT = 768
 
 function Hero(){
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0)
   const [isTransitionEnabled, setIsTransitionEnabled] = useState(true)
   const [resetKey, setResetKey] = useState(0)
+  const [slideMove, setSlideMove] = useState(SLIDE_MOVE)
 
     useEffect(() => {
         const autoSlideTimer = setInterval(() => {
@@ -43,6 +45,24 @@ function Hero(){
         }
     }, [resetKey])
 
+    useEffect(() => {
+    const updateSlideMove = () => {
+        if (window.innerWidth <= MOBILE_BREAKPOINT) {
+            setSlideMove(window.innerWidth + SLIDE_GAP)
+        } else {
+            setSlideMove(SLIDE_MOVE)
+        }
+    }
+
+    updateSlideMove()
+
+    window.addEventListener('resize', updateSlideMove)
+
+    return () => {
+        window.removeEventListener('resize', updateSlideMove)
+    }
+    }, [])
+
 
     return(
         <section className="hero">
@@ -50,7 +70,7 @@ function Hero(){
                 <div 
                 className="hero-track"
                 style={{
-                    transform: `translateX(-${currentSlideIndex * SLIDE_MOVE}px)`,
+                    transform: `translateX(-${currentSlideIndex * slideMove}px)`,
                     transition: isTransitionEnabled
                     ? 'transform 0.5s ease'
                     : 'none',}}
