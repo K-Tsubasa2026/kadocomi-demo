@@ -7,7 +7,7 @@ import Genre from '../../components/Genre/Genre'
 import NewRelease from '../../components/NewRelease/NewRelease'
 import LabelSearch from '../../components/LabelSearch/LabelSearch'
 import BannerList from '../../components/BannerList/BannerList'
-
+import PromoBanner from '../../components/PromoBanner/PromoBanner'
 
 function Home() {
 
@@ -22,6 +22,7 @@ function Home() {
       <NewRelease />
       <LabelSearch />
       <BannerList />
+      <PromoBanner />
     </>
   )
 }
