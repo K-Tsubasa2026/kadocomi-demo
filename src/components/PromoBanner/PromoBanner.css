@@ -1,0 +1,82 @@
+.promo-banner {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* アプリ紹介バナー */
+.promo-banner-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* 下のオレンジ部分 */
+.app-banner {
+    width: 100%;
+    min-height: 64px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 0;
+
+    background-color: #fc8739;
+    box-sizing: border-box;
+}
+
+/* App Store / Google Play */
+.app-badge {
+    height: 44px;
+    min-width: 115px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 5px 10px;
+
+    background-color: #000;
+    color: #fff;
+
+    border-radius: 6px;
+    text-decoration: none;
+
+    box-sizing: border-box;
+}
+
+.app-badge i {
+    font-size: 24px;
+}
+
+.app-badge-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.05;
+}
+
+.app-badge-large {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.app-badge-small {
+    font-size: 8px;
+}
+
+/* QRコード */
+.qr-badge {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+}
+
+.qr-badge img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
