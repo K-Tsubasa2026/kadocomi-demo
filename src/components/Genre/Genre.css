@@ -61,3 +61,19 @@
     text-decoration: none;
     color:#000000;
 }
+
+/* ==========================
+   レスポンシブ対応（追記分・768px以下のみ上書き）
+========================== */
+@media (max-width: 768px) {
+/* ジャンル・タグから探す：横2つ */
+    .genre-inner {
+        padding: 40px 16px;
+    }
+    .genre-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .genre-item {
+        width: 100%;
+    }
+}
