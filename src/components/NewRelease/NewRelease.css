@@ -77,3 +77,16 @@
     font-weight: bold;
     color: #ff4b45;
 }
+
+/* ==========================
+   レスポンシブ対応（追記分・768px以下のみ上書き）
+========================== */
+@media (max-width: 768px) {
+    /* コミック最新刊販売中：横3つ */
+    .new-release-inner {
+        padding: 40px 16px;
+    }
+    .new-release-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
