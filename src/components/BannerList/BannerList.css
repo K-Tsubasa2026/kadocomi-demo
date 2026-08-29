@@ -29,3 +29,14 @@
     border: 3px solid #000;
     text-decoration: none;
 }
+/* ==========================
+   レスポンシブ対応（追記分・768px以下のみ上書き）
+========================== */
+@media (max-width: 768px) {
+        .banner-list {
+        padding: 40px 16px;
+    }
+    .banner-grid {
+        grid-template-columns: 1fr;
+    }
+}

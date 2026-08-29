@@ -70,3 +70,21 @@
     font-size: 16px;
     color: #000;
 }
+
+
+/* ==========================
+   レスポンシブ対応（追記分・768px以下のみ上書き）
+========================== */
+@media (max-width: 768px) {
+     .label-search-inner {
+        padding: 40px 16px;
+    }
+    .label-search-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .label-search-image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+}

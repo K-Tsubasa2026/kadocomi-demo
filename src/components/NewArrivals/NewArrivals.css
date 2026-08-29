@@ -128,6 +128,8 @@
 .arrival-card {
     display: block;
     position: relative;
+    color: #000000;
+    text-decoration: none;    
 }
 
 /* 5の倍数番目のカード以外に縦線を付ける */
@@ -154,4 +156,32 @@
 .arrival-title {
     margin-top: 8px;
     font-size: 13px;
+}
+
+
+/* ==========================
+   レスポンシブ対応（追記分・768px以下のみ上書き）
+========================== */
+@media (max-width: 768px) {
+/* 新着作品：日付タブは横スクロールにしてページ全体がはみ出さないようにする */
+    .date-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+    .date-tab {
+        flex-shrink: 0;
+    }
+    .date-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    
+/* 新着作品：横2つ */
+    .arrival-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .arrival-card::after {
+        display: none;
+    }
 }
