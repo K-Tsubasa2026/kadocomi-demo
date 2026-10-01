@@ -5,7 +5,7 @@ function PromoBanner() {
     return (
         <section className="promo-banner">
             <img
-                src="/images/kadocomiA.png"
+                src="public/images/S__78569474.jpg"
                 alt="アプリ紹介バナー"
                 className="promo-banner-image"
             />
@@ -29,12 +29,6 @@ function PromoBanner() {
                     </span>
                 </Link>
 
-                <div className="qr-badge">
-                    <img
-                        src="/images/AppDownloadCode.0eaa0768.png"
-                        alt="アプリダウンロード用QRコード"
-                    />
-                </div>
             </div>
         </section>
     )
