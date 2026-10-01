@@ -7,7 +7,7 @@ function Header(){
             <div className="header-main">
                 <Link to="/" className="logo-area">
                     <p className="logo-sub">漫画エンタメ全部コミコミ（模写デモ）</p>
-                    <p className="logo">カドコミ風</p>
+                    <p className="logo">Portfolio</p>
                 </Link>
 
                 <Link to="/404" className="login-link">
