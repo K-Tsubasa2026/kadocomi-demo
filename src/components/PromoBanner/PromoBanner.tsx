@@ -5,8 +5,8 @@ function PromoBanner() {
     return (
         <section className="promo-banner">
             <img
-                src="public/images/S__78569474.jpg"
-                alt="アプリ紹介バナー"
+                src="/images/promo-portfolio.jpg"
+                alt="ポートフォリオ制作物の紹介バナー"
                 className="promo-banner-image"
             />
 
