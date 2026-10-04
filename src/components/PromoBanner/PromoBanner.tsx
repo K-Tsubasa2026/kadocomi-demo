@@ -5,7 +5,7 @@ function PromoBanner() {
     return (
         <section className="promo-banner">
             <img
-                src="/images/promo-portfolio.jpg"
+                src={`${import.meta.env.BASE_URL}images/promo-portfolio.jpg`}
                 alt="ポートフォリオ制作物の紹介バナー"
                 className="promo-banner-image"
             />

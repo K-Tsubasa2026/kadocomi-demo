@@ -66,7 +66,7 @@ function NewRelease () {
                     className="new-release-card"
                     >
                         <div className="new-release-image">
-                        <img src={`/images/${newReleaseCard.image}`} alt={newReleaseCard.title} />
+                        <img src={`${import.meta.env.BASE_URL}images/${newReleaseCard.image}`} alt={newReleaseCard.title} />
                         </div>
 
                         <p className="new-release-date">

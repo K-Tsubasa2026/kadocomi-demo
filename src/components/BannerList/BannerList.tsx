@@ -26,7 +26,7 @@ function BannerList (){
                         key={item.image}
                         className="banner-image"
                         >
-                        <img src={`/images/${item.image}`} alt={item.alt} />
+                        <img src={`${import.meta.env.BASE_URL}images/${item.image}`} alt={item.alt} />
                         </Link>
                     ))}
                 </div>
