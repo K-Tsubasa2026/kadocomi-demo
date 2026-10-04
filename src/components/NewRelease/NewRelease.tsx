@@ -1,36 +1,44 @@
 import "./NewRelease.css"
 import { Link } from 'react-router'
 
+// 閲覧日から daysAgo 日前の発売日を作る（例：'10月4日発売'）
+function formatReleaseDate(daysAgo: number) {
+  const date = new Date()
+  date.setDate(date.getDate() - daysAgo)
+  return `${date.getMonth() + 1}月${date.getDate()}日発売`
+}
+
+// daysAgo: 閲覧日の何日前に発売したか（1冊目は当日、ほかは3日前）
 const newReleaseCards = [
   {
     title: '柴犬',
     image: 'cover-shiba.jpg',
-    releaseDate: '8月24日発売',
+    daysAgo: 0,
   },
   {
     title: 'トイプードル',
     image: 'cover-toypoodle.jpg',
-    releaseDate: '8月21日発売',
+    daysAgo: 3,
   },
   {
     title: 'サモエド',
     image: 'cover-samoyed.jpg',
-    releaseDate: '8月21日発売',
+    daysAgo: 3,
   },
   {
     title: 'ハスキー',
     image: 'cover-husky.jpg',
-    releaseDate: '8月21日発売',
+    daysAgo: 3,
   },
   {
     title: 'チワワ',
     image: 'cover-chihuahua.jpg',
-    releaseDate: '8月21日発売',
+    daysAgo: 3,
   },
   {
     title: 'ビーグル',
     image: 'cover-beagle.jpg',
-    releaseDate: '8月21日発売',
+    daysAgo: 3,
   },
 ]
 
@@ -62,7 +70,7 @@ function NewRelease () {
                         </div>
 
                         <p className="new-release-date">
-                            {newReleaseCard.releaseDate}
+                            {formatReleaseDate(newReleaseCard.daysAgo)}
                         </p>
 
                         <p className="new-release-card-title">

@@ -2,16 +2,20 @@ import './NewArrivals.css'
 import { Link } from 'react-router'
 import { useState } from 'react'
 
+const WEEKDAYS = ['日', '月', '火', '水', '木', '金', '土']
+
+// 閲覧日から7日分さかのぼった日付を作る（例：'10/4 日'）
+function createDates() {
+    const today = new Date()
+    return Array.from({ length: 7 }, (_, index) => {
+        const date = new Date(today)
+        date.setDate(today.getDate() - index)
+        return `${date.getMonth() + 1}/${date.getDate()} ${WEEKDAYS[date.getDay()]}`
+    })
+}
+
 // 日付を配列化
-const dates = [
-    '8/22 土',
-    '8/21 金',
-    '8/20 木',
-    '8/19 水',
-    '8/18 火',
-    '8/17 月',
-    '8/16 日', 
-]
+const dates = createDates()
 
 // 作品の配列化（dog-testの犬12匹）
 const dogWorks = [
