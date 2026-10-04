@@ -1,24 +1,24 @@
 import './LabelSearch.css'
 import { Link } from 'react-router'
 
-const labelItems = [
-    'レーベル1',
-    'レーベル2',
-    'レーベル3',
-    'レーベル4',
-    'レーベル5',
-    'レーベル6',
-    'レーベル7',
-    'レーベル8',
-    'レーベル9',
-    'レーベル10',
-    'レーベル11',
-    'レーベル12',
-    'レーベル13',
-    'レーベル14',
-    'レーベル15',
-    'レーベル16',
+// dog-testの犬12匹の顔
+const dogLabels = [
+    { name: '柴犬', image: 'face-shiba.jpg' },
+    { name: 'ハスキー', image: 'face-husky.jpg' },
+    { name: 'ポメラニアン', image: 'face-pomeranian.jpg' },
+    { name: 'トイプードル', image: 'face-toypoodle.jpg' },
+    { name: 'ゴールデン', image: 'face-golden.jpg' },
+    { name: 'チワワ', image: 'face-chihuahua.jpg' },
+    { name: 'フレブル', image: 'face-frenchbulldog.jpg' },
+    { name: 'ボーダー', image: 'face-bordercollie.jpg' },
+    { name: 'ビーグル', image: 'face-beagle.jpg' },
+    { name: 'シェパード', image: 'face-germanshepherd.jpg' },
+    { name: 'ドーベルマン', image: 'face-doberman.jpg' },
+    { name: 'サモエド', image: 'face-samoyed.jpg' },
 ]
+
+// 16枠に足りない分は、1匹目から順にもう一度並べる
+const labelItems = [...dogLabels, ...dogLabels.slice(0, 4)]
 
 function LabelSearch (){
 
@@ -33,18 +33,18 @@ function LabelSearch (){
                     </Link>
                 </div>
                 <div className="label-search-grid">
-                    {labelItems.map((label) => (
+                    {labelItems.map((label, index) => (
                         <Link
                         to="/404"
-                        key={label}
+                        key={`${label.image}-${index}`}
                         className="label-search-item"
                         >
                         <div className="label-search-image">
-                        Demo image
+                        <img src={`/images/${label.image}`} alt={label.name} />
                         </div>
 
                         <p className="label-search-item-title">
-                        {label}
+                        {label.name}
                         </p>
                         </Link>
                     ))}

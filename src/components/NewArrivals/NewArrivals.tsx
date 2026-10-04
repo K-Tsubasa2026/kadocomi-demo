@@ -13,30 +13,24 @@ const dates = [
     '8/16 日', 
 ]
 
-// 作品の配列化
-const arrivals = [
-    '新着作品タイトル1',
-    '新着作品タイトル2',
-    '新着作品タイトル3',
-    '新着作品タイトル4',
-    '新着作品タイトル5',
-    '新着作品タイトル6',
-    '新着作品タイトル7',
-    '新着作品タイトル8',
-    '新着作品タイトル9',
-    '新着作品タイトル10',
-    '新着作品タイトル11',
-    '新着作品タイトル12',
-    '新着作品タイトル13',
-    '新着作品タイトル14',
-    '新着作品タイトル15',
-    '新着作品タイトル16',
-    '新着作品タイトル17',
-    '新着作品タイトル18',
-    '新着作品タイトル19',
-    '新着作品タイトル20',
-
+// 作品の配列化（dog-testの犬12匹）
+const dogWorks = [
+    { title: '主導権は我にあり、マイペース王', image: 'arrival-shiba.jpg' },
+    { title: '中身はおしゃべりおばさん、好奇心モンスター', image: 'arrival-husky.jpg' },
+    { title: '物音ひとつで即出動、警備レベルSP級', image: 'arrival-pomeranian.jpg' },
+    { title: '気づけば懐に入り込む、みんなのアイドル', image: 'arrival-toypoodle.jpg' },
+    { title: '放っておけない症候群、優しさの押し売り名人', image: 'arrival-golden.jpg' },
+    { title: '小さな体にプライド満タン、強がり界のラスボス', image: 'arrival-chihuahua.jpg' },
+    { title: '愛嬌だけで全部解決、人生ゆるめマスコットおじさん', image: 'arrival-frenchbulldog.jpg' },
+    { title: '脳内ずっと作戦会議、頼れる仕事人間', image: 'arrival-bordercollie.jpg' },
+    { title: '喜怒哀楽は天下一品、陽気な嗅覚探偵', image: 'arrival-beagle.jpg' },
+    { title: '冷静沈着なエリート、現場を守る守護者', image: 'arrival-germanshepherd.jpg' },
+    { title: '眼光だけで場を制圧、漆黒の指揮官', image: 'arrival-doberman.jpg' },
+    { title: '歩く幸福供給装置、ふわふわ界の天使', image: 'arrival-samoyed.jpg' },
 ]
+
+// 20枠に足りない分は、1匹目から順にもう一度並べる
+const arrivals = [...dogWorks, ...dogWorks.slice(0, 8)]
 
 function NewArrivals() {
     const [isExpanded, setIsExpanded] = useState(false)
@@ -73,18 +67,18 @@ function NewArrivals() {
             {/* arrivals.slice(0, 10) 15件のうち最初の10件だけ取得 */}
             {/* .map((arrival) => ( 1件ずつ取り出す */}
             {/* <p className="arrival-title">{arrival}</p> 実際のタイトルを画面に表示*/}
-            {arrivals.slice(0,10).map((arrival) => (
+            {arrivals.slice(0,10).map((arrival, index) => (
                 <Link 
                 to="/404"
-                key={arrival}
+                key={`${arrival.image}-${index}`}
                 className="arrival-card"
                 >
                     <div className="arrival-image">
-                        Demo image
+                        <img src={`/images/${arrival.image}`} alt={arrival.title} />
                     </div>
 
                     <p className="arrival-title">
-                    {arrival}
+                    {arrival.title}
                     </p>
                 </Link>
             ))}
@@ -101,18 +95,18 @@ function NewArrivals() {
             >
                 {arrivals
                 .slice(10, isExpanded ? 20 : 15)
-                .map((arrival) => (
+                .map((arrival, index) => (
                     <Link
                     to="/404"
-                    key={arrival}
+                    key={`${arrival.image}-${index + 10}`}
                     className="arrival-card"
                     >
                     <div className="arrival-image">
-                        Demo image
+                        <img src={`/images/${arrival.image}`} alt={arrival.title} />
                     </div>
 
                     <p className="arrival-title">
-                        {arrival}
+                        {arrival.title}
                     </p>
                 </Link>
             ))}

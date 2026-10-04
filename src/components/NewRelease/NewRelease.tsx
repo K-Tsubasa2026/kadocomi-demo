@@ -3,27 +3,33 @@ import { Link } from 'react-router'
 
 const newReleaseCards = [
   {
-    title: '最新刊タイトル1',
+    title: '柴犬',
+    image: 'cover-shiba.jpg',
     releaseDate: '8月24日発売',
   },
   {
-    title: '最新刊タイトル2',
+    title: 'トイプードル',
+    image: 'cover-toypoodle.jpg',
     releaseDate: '8月21日発売',
   },
   {
-    title: '最新刊タイトル3',
+    title: 'サモエド',
+    image: 'cover-samoyed.jpg',
     releaseDate: '8月21日発売',
   },
   {
-    title: '最新刊タイトル4',
+    title: 'ハスキー',
+    image: 'cover-husky.jpg',
     releaseDate: '8月21日発売',
   },
   {
-    title: '最新刊タイトル5',
+    title: 'チワワ',
+    image: 'cover-chihuahua.jpg',
     releaseDate: '8月21日発売',
   },
   {
-    title: '最新刊タイトル6',
+    title: 'ビーグル',
+    image: 'cover-beagle.jpg',
     releaseDate: '8月21日発売',
   },
 ]
@@ -52,7 +58,7 @@ function NewRelease () {
                     className="new-release-card"
                     >
                         <div className="new-release-image">
-                        Demo image
+                        <img src={`/images/${newReleaseCard.image}`} alt={newReleaseCard.title} />
                         </div>
 
                         <p className="new-release-date">
