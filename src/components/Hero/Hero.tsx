@@ -81,7 +81,7 @@ function Hero(){
                 >
                     {loopImages.map((image,index) =>(
                     <Link to="/404" className="hero-slide" key={`${image}-${index}`}>
-                        <img src={`/images/${image}`} alt={`スライド画像${(index % heroImages.length) + 1}`}/>
+                        <img src={`${import.meta.env.BASE_URL}images/${image}`} alt={`スライド画像${(index % heroImages.length) + 1}`}/>
                     </Link>
                     ))}
                 </div>

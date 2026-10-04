@@ -40,7 +40,7 @@ function LabelSearch (){
                         className="label-search-item"
                         >
                         <div className="label-search-image">
-                        <img src={`/images/${label.image}`} alt={label.name} />
+                        <img src={`${import.meta.env.BASE_URL}images/${label.image}`} alt={label.name} />
                         </div>
 
                         <p className="label-search-item-title">

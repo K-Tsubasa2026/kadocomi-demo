@@ -78,7 +78,7 @@ function NewArrivals() {
                 className="arrival-card"
                 >
                     <div className="arrival-image">
-                        <img src={`/images/${arrival.image}`} alt={arrival.title} />
+                        <img src={`${import.meta.env.BASE_URL}images/${arrival.image}`} alt={arrival.title} />
                     </div>
 
                     <p className="arrival-title">
@@ -106,7 +106,7 @@ function NewArrivals() {
                     className="arrival-card"
                     >
                     <div className="arrival-image">
-                        <img src={`/images/${arrival.image}`} alt={arrival.title} />
+                        <img src={`${import.meta.env.BASE_URL}images/${arrival.image}`} alt={arrival.title} />
                     </div>
 
                     <p className="arrival-title">
